@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-//import Inicio from './component/inicio';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Results from './component/results';
 import Home from './component/home';
 
 
@@ -9,13 +9,14 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Switch>
 
-          <Route exact path='/' component={Home} />
-          {/* <Route path='/home' component={Home} /> */}
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
 
-        </Switch>
-
+        <Routes>
+          <Route path="results" element={<Results />} />
+        </Routes>
 
       </div>
     </BrowserRouter>
